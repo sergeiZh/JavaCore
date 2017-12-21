@@ -1,0 +1,2 @@
+# JavaCore
+Java core examples

@@ -1,21 +1,13 @@
 package by.sergei.lambda;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class WorkWithPredicate {
     
     public static void main(String[] args) {
-        Book book1 = new Book("Dan", "Brown", "USA", "Angels and Demons", 500);
-        Book book2 = new Book("Thomas", "Chase", "USA", "True Detective", 450);
-        Book book3 = new Book("Jhon", "Tolkien", "UK", "Lord of the Rings", 1000);
-        Book book4 = new Book("Mikhail", "Bulgakov", "Russia", "Heart of a dog", 350);
-        Book book5 = new Book("Gans-Christian", "Andersen", "Denmark", "Snow queen", 50);
-        Book book6 = new Book("Stanislav", "Lem", "Czeck", "Solaris", 280);
-
-        List<Book> books = new ArrayList<>(Arrays.asList(book1, book2, book3, book4, book5, book6));
+        List<Book> books = LibraryTools.generateListOfBooks();
         
         Predicate<Book> filterBookByPagesAmountPredicate = book -> book.getPageAmount()>440;
         List<Book> booksFilteredByPagesAmount = filterBook(books, filterBookByPagesAmountPredicate);

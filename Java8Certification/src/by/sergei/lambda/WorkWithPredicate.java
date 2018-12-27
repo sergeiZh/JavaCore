@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
+import by.sergei.lambda.library.Book;
+import by.sergei.lambda.library.LibraryTools;
+
 public class WorkWithPredicate {
 
     public static void main(String[] args) {
@@ -37,14 +40,14 @@ public class WorkWithPredicate {
         List<Book> booksFilteredByPagesAmount = filterBook(books, book -> book.getPageAmount() > 440);
         System.out.println("Books with page amount > 440 " + booksFilteredByPagesAmount);
 
-        List<Book> booksFilteredByCountry = filterBook(books, book -> book.getAuthorCountry().equals("Denmark"));
+        List<Book> booksFilteredByCountry = filterBook(books, book -> book.getCountry().equals("Denmark"));
         System.out.println("Books with country Denmark " + booksFilteredByCountry);
 
         Predicate<Book> pageAmountPredicate = book -> book.getPageAmount() > 450;
-        List<Book> booksFilteredByPageAmountAndCountry = filterBook(books, pageAmountPredicate.and(book -> book.getAuthorCountry().equals("UK")));
+        List<Book> booksFilteredByPageAmountAndCountry = filterBook(books, pageAmountPredicate.and(book -> book.getCountry().equals("UK")));
         System.out.println("Books with pages amount > 450 AND author count UK " + booksFilteredByPageAmountAndCountry);
 
-        List<Book> booksFilteredByPageAmountOrCountry = filterBook(books, pageAmountPredicate.or(book -> book.getAuthorCountry().equals("UK")));
+        List<Book> booksFilteredByPageAmountOrCountry = filterBook(books, pageAmountPredicate.or(book -> book.getCountry().equals("UK")));
         System.out.println("Books with pages amount > 450 OR author count UK " + booksFilteredByPageAmountOrCountry);
 
         List<Book> booksFilteredByPageAmountNegate = filterBook(books, pageAmountPredicate.negate());

@@ -1,4 +1,4 @@
-package by.sergei.lambda;
+package by.sergei.lambda.library;
 
 import java.util.ArrayList;
 import java.util.Arrays;

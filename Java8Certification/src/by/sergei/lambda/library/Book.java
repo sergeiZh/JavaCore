@@ -1,17 +1,22 @@
-package by.sergei.lambda;
+package by.sergei.lambda.library;
+
+import java.util.List;
 
 public class Book {
     
     private String authorName;
     private String authorLastName;
-    private String authorCountry;
+    private String country;
     private String bookName;
     private int pageAmount;
+    private long price;
+    private String genre;
+    private List<Award> awards;
     
-    Book(String authorName, String authorLastName, String authorCountry, String bookName, int pageAmount){
+    public Book(String authorName, String authorLastName, String authorCountry, String bookName, int pageAmount){
         this.authorName = authorName;
         this.authorLastName = authorLastName;
-        this.authorCountry = authorCountry;
+        this.country = authorCountry;
         this.bookName = bookName;
         this.pageAmount = pageAmount;
     }
@@ -31,12 +36,12 @@ public class Book {
         this.authorLastName = authorLastName;
     }
     
-    public String getAuthorCountry() {
-        return authorCountry;
+    public String getCountry() {
+        return country;
     }
     
-    public void setAuthorCountry(String authorCountry) {
-        this.authorCountry = authorCountry;
+    public void setCountry(String country) {
+        this.country = country;
     }
     
     public String getBookName() {
@@ -53,11 +58,35 @@ public class Book {
     }
     
     public static boolean useAuthor(Book book) {
-        return book.getAuthorCountry().equals("USA");
+        return book.getCountry().equals("USA");
     }
     
     @Override
     public String toString() {
         return authorName + " " + authorLastName + " " + bookName + " " + pageAmount;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public List<Award> getAwards() {
+        return awards;
+    }
+
+    public void setAwards(List<Award> awards) {
+        this.awards = awards;
     }
 }

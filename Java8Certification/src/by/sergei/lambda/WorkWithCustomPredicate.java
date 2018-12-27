@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import by.sergei.lambda.function.CustomPredicate;
+import by.sergei.lambda.library.Book;
+import by.sergei.lambda.library.LibraryTools;
 
 public class WorkWithCustomPredicate {
     

@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+import by.sergei.lambda.library.Book;
+import by.sergei.lambda.library.LibraryTools;
+
 public class WorkingWithConsumer {
 
     public static void main(String[] args) {
@@ -18,11 +21,11 @@ public class WorkingWithConsumer {
         
         BiConsumer<List<Book>, String> changeCountryOfSecondBook = (list, str) -> {
             Book secondBook = list.get(1);
-            list.get(1).setAuthorCountry(secondBook.getAuthorCountry() + str);
+            list.get(1).setCountry(secondBook.getCountry() + str);
         };
         
         processBiConsumer(books, " changed", changeCountryOfSecondBook);
-        System.out.println(books.get(1).getAuthorCountry());
+        System.out.println(books.get(1).getCountry());
     }
 
     static void processConsumer(List<Book> list, Consumer<List<Book>> consumer) {

@@ -3,6 +3,9 @@ package by.sergei.lambda;
 import java.util.Comparator;
 import java.util.List;
 
+import by.sergei.lambda.library.Book;
+import by.sergei.lambda.library.LibraryTools;
+
 public class WorkWithComparator {
     
     public static void main(String[] args) {

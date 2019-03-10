@@ -1,7 +1,9 @@
 package by.sergei.lambda.library;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class LibraryTools {
@@ -29,6 +31,16 @@ public class LibraryTools {
         Book book8 = new Book("Mikhail", "Prishvin", "Russia", "Black Arab", 120);
         
         return new ArrayList<>(Arrays.asList(book1, book2, book3, book4, book5, book6, book7, book8));
+    }
+    
+    public static List<Author> generateAuthors() {
+        Author author = new Author("Lois McMaster", "Bujold", LocalDate.of(1949, 11, 2), "USA", 2_00_000L);
+        return new ArrayList<>(Arrays.asList(author));
+    }
+    
+    public static List<Award> generateAwards(){
+        
+        return new ArrayList<>();
     }
 
 }

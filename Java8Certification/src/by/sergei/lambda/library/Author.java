@@ -1,5 +1,6 @@
 package by.sergei.lambda.library;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -7,11 +8,17 @@ public class Author {
     
     private String name;
     private String lastName;
-    private Date birthDate;
+    private LocalDate birthDate;
     private String country;
-    private int age;
-    private List<Award> awards;
     private long income;
+    
+    public Author(String name, String lastName, LocalDate birthDate, String country, long income) {
+        this.name = name;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.country = country;
+        this.income = income;
+    }
     
     public String getName() {
         return name;
@@ -25,10 +32,10 @@ public class Author {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate  birthDate) {
         this.birthDate = birthDate;
     }
     public String getCountry() {
@@ -36,18 +43,6 @@ public class Author {
     }
     public void setCountry(String country) {
         this.country = country;
-    }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
-    public List<Award> getAwards() {
-        return awards;
-    }
-    public void setAwards(List<Award> awards) {
-        this.awards = awards;
     }
     public long getIncome() {
         return income;
